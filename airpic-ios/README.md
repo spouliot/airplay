@@ -26,10 +26,10 @@ available under the Creative Commons [CC0 1.0 Universal Public Domain Dedication
 Screenshots
 ===========
 
-![iOS 5.1](airpic-iphone-51.png "iOS 5.1")
+![iOS 5.1](https://raw.github.com/spouliot/airplay/master/airpic-ios/airpic-iphone-51.png "iOS 5.1")
 
-![iOS 6.0](airpic-iphone-60.png "iOS 6.0")
+![iOS 6.0](https://raw.github.com/spouliot/airplay/master/airpic-ios/airpic-iphone-60.png "iOS 6.0")
 
-![iOS 5.1](airpic-ipad-51.png "iOS 5.1")
+![iOS 5.1](https://raw.github.com/spouliot/airplay/master/airpic-ios/airpic-ipad-51.png "iOS 5.1")
 
-![iOS 6.0](airpic-ipad-60.png "iOS 6.0")
+![iOS 6.0](https://raw.github.com/spouliot/airplay/master/airpic-ios/airpic-ipad-60.png "iOS 6.0")
