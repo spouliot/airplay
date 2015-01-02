@@ -24,7 +24,7 @@ namespace AirPicDemo {
 	public class ImageViewController : UIViewController	{
 
 		UIPopoverController popup;
-		UIImageView image_view;
+		readonly UIImageView image_view;
 
 		public ImageViewController ()
 		{
@@ -43,7 +43,7 @@ namespace AirPicDemo {
 					return;
 				// UIActivity is only for iOS6+ but that should not limit us :-)
 				if (UIDevice.CurrentDevice.CheckSystemVersion (6,0)) {
-					UIActivityViewController a = new UIActivityViewController (new [] { image_view.Image }, 
+					var a = new UIActivityViewController (new [] { image_view.Image }, 
 						UIAirPlayActivity.GetCurrentActivities ());
 					if (AppDelegate.RunningOnIPad) {
 						popup = new UIPopoverController (a);
@@ -53,8 +53,8 @@ namespace AirPicDemo {
 					}
 				} else {
 					var devices = AirPlayBrowser.GetDeviceNames ();
-					UIActionSheet a = new UIActionSheet (null, null, "Cancel", null, devices);
-					a.Clicked += (object sender, UIButtonEventArgs e) => {
+					var a = new UIActionSheet (null, null, "Cancel", null, devices);
+					a.Clicked += (sender, e) => {
 						nint index = e.ButtonIndex;
 						// ignore Cancel button
 						if (index < devices.Length) {
@@ -71,19 +71,19 @@ namespace AirPicDemo {
 	}
 
 	[Register ("AppDelegate")]
-	public partial class AppDelegate : UIApplicationDelegate {
+	public class AppDelegate : UIApplicationDelegate {
 		
-		UIWindow window;
+		public override UIWindow Window { get; set; }
 		
 		public static bool RunningOnIPad { get; private set; }
 		
-		public override bool FinishedLaunching (UIApplication app, NSDictionary options)
+		public override bool FinishedLaunching (UIApplication application, NSDictionary launchOptions)
 		{
 			RunningOnIPad = UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Pad;
 			
-			window = new UIWindow (UIScreen.MainScreen.Bounds);
-			window.RootViewController = new UINavigationController (new ImageViewController ());
-			window.MakeKeyAndVisible ();
+			Window = new UIWindow (UIScreen.MainScreen.Bounds);
+			Window.RootViewController = new UINavigationController (new ImageViewController ());
+			Window.MakeKeyAndVisible ();
 			return true;
 		}
 		

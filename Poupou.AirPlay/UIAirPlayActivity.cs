@@ -1,7 +1,7 @@
 // Authors:
 //	Sebastien Pouliot  <sebastien@xamarin.com>
 //
-// Copyright 2012 Xamarin Inc.
+// Copyright 2012-2014 Xamarin Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,7 +14,6 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 
-using System;
 using System.Collections.Generic;
 using CoreGraphics;
 using Foundation;
@@ -65,9 +64,7 @@ namespace Poupou.AirPlay {
 		// This activity only support one UIImage
 		public override bool CanPerform (NSObject[] activityItems)
 		{
-			if (activityItems.Length != 1)
-				return false;
-			return (activityItems [0] is UIImage);
+			return activityItems.Length != 1 ? false : (activityItems [0] is UIImage);
 		}
 		
 		// Hold a reference to the UIImage we'll perform on
@@ -94,7 +91,7 @@ namespace Poupou.AirPlay {
 		/// </returns>
 		public static UIActivity[] GetCurrentActivities ()
 		{
-			List<UIActivity> list = new List<UIActivity> ();
+			var list = new List<UIActivity> ();
 			foreach (var device in AirPlayBrowser.Devices) {
 				list.Add (new UIAirPlayActivity (device));
 			}

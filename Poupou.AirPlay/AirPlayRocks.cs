@@ -59,7 +59,7 @@ namespace Poupou.AirPlay {
 				bool ok = true;
 				try {
 					string url = String.Format ("http://{0}:{1}/photo", service.HostName, service.Port);
-					HttpWebRequest req = (HttpWebRequest) WebRequest.Create (url);
+					var req = (HttpWebRequest) WebRequest.Create (url);
 					using (var data = image.AsJPEG ()) {
 						req.Method = "PUT";
 						req.ContentLength = (int) data.Length;
