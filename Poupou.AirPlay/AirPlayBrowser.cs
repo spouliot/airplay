@@ -22,8 +22,8 @@ using System.Diagnostics;
 using System.Net;
 using System.Linq;
 
-using MonoTouch.Foundation;
-using MonoTouch.UIKit;
+using Foundation;
+using UIKit;
 
 namespace Poupou.AirPlay {
 

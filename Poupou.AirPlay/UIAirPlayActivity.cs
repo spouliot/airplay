@@ -16,9 +16,9 @@
 
 using System;
 using System.Collections.Generic;
-using System.Drawing;
-using MonoTouch.Foundation;
-using MonoTouch.UIKit;
+using CoreGraphics;
+using Foundation;
+using UIKit;
 
 namespace Poupou.AirPlay {
 
@@ -109,13 +109,13 @@ namespace Poupou.AirPlay {
 			// iPad: 55x55 (110x110 retina)
 			float size = UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Pad ? 55f : 43f;
 			// http://tirania.org/blog/archive/2010/Jul-20-2.html
-			UIGraphics.BeginImageContextWithOptions (new SizeF (size, size), false, 0.0f);
+			UIGraphics.BeginImageContextWithOptions (new CGSize (size, size), false, 0.0f);
 			using (var c = UIGraphics.GetCurrentContext ()) {
 				c.SetFillColor (1.0f, 1.0f, 1.0f, 1.0f);
 				c.SetStrokeColor (1.0f, 1.0f, 1.0f, 1.0f);
 				UIFont font = UIFont.BoldSystemFontOfSize (size - 8);
 				using (var s = new NSString ("tv"))
-					s.DrawString (new PointF (7.5f, 0.0f), font);
+					s.DrawString (new CGPoint (7.5f, 0.0f), font);
 			}
 			UIImage img = UIGraphics.GetImageFromCurrentImageContext ();
 			UIGraphics.EndImageContext ();

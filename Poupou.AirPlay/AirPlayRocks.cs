@@ -1,7 +1,7 @@
 // Authors:
 //	Sebastien Pouliot  <sebastien@xamarin.com>
 //
-// Copyright 2012 Xamarin Inc.
+// Copyright 2012-2014 Xamarin Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -20,8 +20,8 @@ using System.IO;
 using System.Net;
 using System.Threading;
 
-using MonoTouch.Foundation;
-using MonoTouch.UIKit;
+using Foundation;
+using UIKit;
 
 namespace Poupou.AirPlay {
 
@@ -62,12 +62,12 @@ namespace Poupou.AirPlay {
 					HttpWebRequest req = (HttpWebRequest) WebRequest.Create (url);
 					using (var data = image.AsJPEG ()) {
 						req.Method = "PUT";
-						req.ContentLength = data.Length;
+						req.ContentLength = (int) data.Length;
 						req.UserAgent = "AirPlay/160.4 (Photos)";
 						req.Headers.Add ("X-Apple-AssetKey", Guid.NewGuid ().ToString ());
 						req.Headers.Add ("X-Apple-Session-ID", session.ToString ());
 						var s = req.GetRequestStream ();
-						using (Stream ums = new UnmanagedMemoryStream ((byte *) data.Bytes, data.Length))
+						using (Stream ums = new UnmanagedMemoryStream ((byte *) data.Bytes, (int) data.Length))
 							ums.CopyTo (s);
 					}
 					req.GetResponse ().Dispose ();

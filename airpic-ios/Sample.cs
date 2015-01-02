@@ -1,7 +1,7 @@
 // Authors:
 //	Sebastien Pouliot  <sebastien@xamarin.com>
 //
-// Copyright 2012 Xamarin Inc.
+// Copyright 2012-2014 Xamarin Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -15,8 +15,8 @@
 // See the License for the specific language governing permissions and
 
 using System;
-using MonoTouch.Foundation;
-using MonoTouch.UIKit;
+using Foundation;
+using UIKit;
 using Poupou.AirPlay;
 
 namespace AirPicDemo {
@@ -55,7 +55,7 @@ namespace AirPicDemo {
 					var devices = AirPlayBrowser.GetDeviceNames ();
 					UIActionSheet a = new UIActionSheet (null, null, "Cancel", null, devices);
 					a.Clicked += (object sender, UIButtonEventArgs e) => {
-						int index = e.ButtonIndex;
+						nint index = e.ButtonIndex;
 						// ignore Cancel button
 						if (index < devices.Length) {
 							var device = AirPlayBrowser.GetDevice (devices [index]);
