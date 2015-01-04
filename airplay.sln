@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Poupou.AirPlay", "Poupou.Ai
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "airpic-ios", "airpic-ios\airpic-ios.csproj", "{4A81A178-FE43-4E1B-A0DC-D1D34D1CCF90}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "airpic-action", "airpic-action\airpic-action.csproj", "{15FACFCE-F7A3-4C62-A9A6-B46514B5B892}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -19,6 +21,22 @@ Global
 		AppStore|iPhone = AppStore|iPhone
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{15FACFCE-F7A3-4C62-A9A6-B46514B5B892}.Ad-Hoc|iPhone.ActiveCfg = Ad-Hoc|iPhone
+		{15FACFCE-F7A3-4C62-A9A6-B46514B5B892}.Ad-Hoc|iPhone.Build.0 = Ad-Hoc|iPhone
+		{15FACFCE-F7A3-4C62-A9A6-B46514B5B892}.AppStore|iPhone.ActiveCfg = AppStore|iPhone
+		{15FACFCE-F7A3-4C62-A9A6-B46514B5B892}.AppStore|iPhone.Build.0 = AppStore|iPhone
+		{15FACFCE-F7A3-4C62-A9A6-B46514B5B892}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{15FACFCE-F7A3-4C62-A9A6-B46514B5B892}.Debug|iPhone.Build.0 = Debug|iPhone
+		{15FACFCE-F7A3-4C62-A9A6-B46514B5B892}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{15FACFCE-F7A3-4C62-A9A6-B46514B5B892}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{15FACFCE-F7A3-4C62-A9A6-B46514B5B892}.Debug|x86.ActiveCfg = Debug|iPhoneSimulator
+		{15FACFCE-F7A3-4C62-A9A6-B46514B5B892}.Debug|x86.Build.0 = Debug|iPhoneSimulator
+		{15FACFCE-F7A3-4C62-A9A6-B46514B5B892}.Release|iPhone.ActiveCfg = Release|iPhone
+		{15FACFCE-F7A3-4C62-A9A6-B46514B5B892}.Release|iPhone.Build.0 = Release|iPhone
+		{15FACFCE-F7A3-4C62-A9A6-B46514B5B892}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{15FACFCE-F7A3-4C62-A9A6-B46514B5B892}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+		{15FACFCE-F7A3-4C62-A9A6-B46514B5B892}.Release|x86.ActiveCfg = Release|iPhoneSimulator
+		{15FACFCE-F7A3-4C62-A9A6-B46514B5B892}.Release|x86.Build.0 = Release|iPhoneSimulator
 		{4A81A178-FE43-4E1B-A0DC-D1D34D1CCF90}.Ad-Hoc|iPhone.ActiveCfg = Ad-Hoc|iPhone
 		{4A81A178-FE43-4E1B-A0DC-D1D34D1CCF90}.Ad-Hoc|iPhone.Build.0 = Ad-Hoc|iPhone
 		{4A81A178-FE43-4E1B-A0DC-D1D34D1CCF90}.AppStore|iPhone.ActiveCfg = AppStore|iPhone
@@ -67,8 +85,5 @@ Global
 		{F978A0B5-41F9-4484-B2BD-10A018C9EABD}.Release|iPhoneSimulator.Build.0 = Release|x86
 		{F978A0B5-41F9-4484-B2BD-10A018C9EABD}.Release|x86.ActiveCfg = Release|x86
 		{F978A0B5-41F9-4484-B2BD-10A018C9EABD}.Release|x86.Build.0 = Release|x86
-	EndGlobalSection
-	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = airpic-ios\airpic-ios.csproj
 	EndGlobalSection
 EndGlobal

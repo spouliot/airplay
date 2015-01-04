@@ -19,7 +19,7 @@ using Foundation;
 using UIKit;
 using Poupou.AirPlay;
 
-namespace AirPicDemo {
+namespace AirPic.Demo {
 
 	public class ImageViewController : UIViewController	{
 
@@ -29,7 +29,10 @@ namespace AirPicDemo {
 		public ImageViewController ()
 		{
 			Title = "AirPic Demo";
-			AirPlayBrowser.Enabled = true;
+			// on iOS 8.x we delegate the AirPlay feature to our Action extension
+			bool ios8 = UIDevice.CurrentDevice.CheckSystemVersion (8,0);
+			// the action extension will do the browsing for airplay capable devices
+			AirPlayBrowser.Enabled = !ios8;
 
 			var bounds = UIScreen.MainScreen.Bounds;
 			image_view = new UIImageView (bounds);
@@ -43,8 +46,8 @@ namespace AirPicDemo {
 					return;
 				// UIActivity is only for iOS6+ but that should not limit us :-)
 				if (UIDevice.CurrentDevice.CheckSystemVersion (6,0)) {
-					var a = new UIActivityViewController (new [] { image_view.Image }, 
-						UIAirPlayActivity.GetCurrentActivities ());
+					var activities = AirPlayBrowser.Enabled ? UIAirPlayActivity.GetCurrentActivities () : null;
+					var a = new UIActivityViewController (new [] { image_view.Image }, activities);
 					if (AppDelegate.RunningOnIPad) {
 						popup = new UIPopoverController (a);
 						popup.PresentFromBarButtonItem (action, UIPopoverArrowDirection.Up, true);

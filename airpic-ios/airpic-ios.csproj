@@ -50,6 +50,9 @@
     <MtouchDebug>True</MtouchDebug>
     <CodesignKey>iPhone Developer</CodesignKey>
     <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <MtouchI18n>
+    </MtouchI18n>
+    <MtouchLink>Full</MtouchLink>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugType>none</DebugType>
@@ -86,7 +89,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.Core" />
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
   <ItemGroup>
@@ -102,6 +104,11 @@
     <ProjectReference Include="..\Poupou.AirPlay\Poupou.AirPlay.csproj">
       <Project>{82CB7B9A-6C9E-4AF9-9D6B-243D63A6D739}</Project>
       <Name>Poupou.AirPlay</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\airpic-action\airpic-action.csproj">
+      <Project>{15FACFCE-F7A3-4C62-A9A6-B46514B5B892}</Project>
+      <Name>airpic-action</Name>
+      <IsAppExtension>True</IsAppExtension>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
