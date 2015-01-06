@@ -74,10 +74,11 @@ namespace AirPic.Action {
 							return;
 
 						// or we can get an NSUrl, e.g. iOS photo app
-						// hack: a normal cast fails, we workaround that using the string representation
-						using (var url = NSUrl.FromString (image.Description)) {
-							if (url != null)
-								Image = UIImage.FromFile (url.Path);
+						var url = (image as NSUrl);
+						if (url != null) {
+							Image = UIImage.FromFile (url.Path);
+							if (Image != null)
+								return;
 						}
 
 						// I have not seen a comprehensive list of all types that UTType.Image can return
